@@ -1,4 +1,5 @@
 from pathlib import Path
+from distutils.util import strtobool
 import os
 
 
@@ -6,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = os.environ.get('DEBUG')
+DEBUG = bool(strtobool(os.getenv('DEBUG', 'True')))
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(',')
 
@@ -101,8 +102,8 @@ EMAIL_HOST = os.environ['EMAIL_HOST']
 EMAIL_PORT = os.environ['EMAIL_PORT']
 EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
 EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
-EMAIL_USE_TLS = False
-EMAIL_USE_SSL = True
+EMAIL_USE_TLS = bool(strtobool(os.getenv('EMAIL_USE_TLS', 'True')))
+EMAIL_USE_SSL = bool(strtobool(os.getenv('EMAIL_USE_SSL', 'True')))
 
 SESSION_ENGINE = os.environ['SESSION_ENGINE']
 BASKET_SESSION_ID = os.environ['BASKET_SESSION_ID']
