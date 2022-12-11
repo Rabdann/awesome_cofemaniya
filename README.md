@@ -19,5 +19,5 @@ Technologys:
 + Django
 + Djangorestframework
 + Dockerfile
-+ docker-compose
++ Docker-compose
 + Bootstrap
