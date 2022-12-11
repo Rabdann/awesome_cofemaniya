@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    {{ 'Добавление кофе' }}
+{% endblock %}
+
+{% block content %}
+    <br>
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+
+            {% for field in form %}
+                <div class="input-group mb-3">
+                    <span class="input-group-text">{{ field.label }}</span>
+                    {{ field }}
+                </div>
+
+                {% if field.errors %}
+                    {{ field.errors }}
+                {% endif %}
+            {% endfor %}
+
+<br>
+            <button type="submit" class="btn btn-primary btn-success-info">Добавить</button>
+            <br>
+        </form>
+    </div>
+
+<br>
+    <div class="container">
+        <a href="{% url 'list_coffee' %}" class="btn btn-warning btn-success-info">Вернутся к меню</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    {{ 'Обратная связь' }}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+
+
+            {{ form.subject.label }}
+            {{ form.subject }}
+
+            {{ form.content.label }}
+            {{ form.content }}
+
+            <button type="submit" class="btn btn-success btn-lg">Отправить сообщение</button>
+            <br>
+            {{form.errors}}
+        </form>
+    </div>
+    <div class="container">
+        <a href="{% url 'cafe' %}" class="btn btn-info btn-lg">Вернутся на главную</a>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Авторизация
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form method="post">
+        {% csrf_token %}
+
+        {{ form.username.label }}
+        {{ form.username }}
+
+        {{ form.password.label }}
+        {{ form.password }}
+        <br>
+        <button type="submit" class="btn btn-success btn-lg">Войти</button>
+        <br>
+        {{form.errors}}
+    </form>
+    <a class="btn btn-warning btn-lg" href="{% url 'regis' %}">Зарегистрироваться</a>
+    <a class="btn btn-info btn-lg" href="{% url 'list_coffee' %}">Назад</a>
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block title %}Кофемания{% endblock %}
+
+{% block content %}
+
+{% for msg in messages %}
+<div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">Выполнено!</h4>
+  <p> {{msg}}</p>
+</div>
+{% endfor %}
+
+                <H1 class="text-center">Добро пожаловать в Кофеманию !</H1>
+<br>
+    <img src="{% static 'image/icon2.jpeg' %}" width="1440" height="560" alt="pic">
+
+{% endblock %}
