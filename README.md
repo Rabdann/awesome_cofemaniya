@@ -21,3 +21,6 @@ Technologys:
 + Dockerfile
 + Docker-compose
 + Bootstrap
+
+
+VPS  - http://81.163.28.188:8000/cafe/
